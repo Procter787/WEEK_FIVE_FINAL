@@ -62,5 +62,22 @@ app.get("/api/date", (req, res) => {
 
 
 
+app.get("/api/workout", (req, res) => {
+  const workouts = ["Pushups",
+    "situps",
+    "1 mile jog",
+    "burpees"
+  ];
+
+  // choose random compliment
+  let randomIndex = Math.floor(Math.random() * workouts.length);
+  let randomWorkout = workouts[randomIndex];
+
+  res.status(200).send(randomWorkout);
+
+});
+
+
+
 
 app.listen(4000, () => console.log("Server running on 4000"));
